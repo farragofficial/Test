@@ -492,7 +492,7 @@ header {
   }
   }
   .gallery {
-    background-color: #C6C6C6;
+    background-color: var(--section-background);
     
   }
   .gallery .cards .card {
