@@ -62,7 +62,7 @@ ul {
   }
 }
 /*variabol*/
-.super-heading h2 {
+.super-heading  {
   width: fit-content;
   margin: 0 auto 70px;
   padding: 5px 20px;
@@ -71,10 +71,12 @@ ul {
   position: relative;
   z-index: 2;
   text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.super-heading h2::before,
-.super-heading h2::after {
+.super-heading::before,
+.super-heading::after {
   content: "";
   width: 20px;
   height: 20px;
@@ -86,24 +88,24 @@ ul {
   z-index: -1;
 
 }
-.super-heading h2:hover {
+.super-heading:hover {
   color: #fff;
   transition: .1s .1s ease-in-out;
 }
 
-.super-heading h2::after {
+.super-heading::after {
   right: -40px;
 }
 
-.super-heading h2::before {
+.super-heading::before {
   left: -40px;
 
 }
 
-.super-heading h2:hover::before  {
+.super-heading:hover::before  {
   animation: ball-left 0.3s linear forwards;
 }
-.super-heading h2:hover::after  {
+.super-heading:hover::after  {
 animation: ball-right 0.3s linear forwards;
 }
 @keyframes ball-left{
@@ -490,7 +492,7 @@ header {
   }
   }
   .gallery {
-    background-color: #ddd;
+    background-color: #C6C6C6;
     
   }
   .gallery .cards .card {
