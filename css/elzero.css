@@ -484,11 +484,11 @@ header {
   text-transform: capitalize;
 }
 .articles .card:hover .more i {
-  animation: moveing 0.5s linear infinite;
+  animation: moveing 0.3s linear infinite;
 }
 @keyframes moveing {
   50% {
-    transform: translateX(5px);
+    transform: translateX(10px);
   }
   100% {
     transform: translate(0px);
