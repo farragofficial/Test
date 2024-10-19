@@ -62,12 +62,12 @@ ul {
   }
 }
 /*variabol*/
-.super-heading  {
+.super-heading {
   width: fit-content;
   margin: 0 auto 70px;
   padding: 5px 20px;
   border: 2px solid var(--main-color);
-  transition: .5s;
+  transition: 0.5s;
   position: relative;
   z-index: 2;
   text-transform: capitalize;
@@ -78,19 +78,18 @@ ul {
 .super-heading::before,
 .super-heading::after {
   content: "";
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   background-color: var(--main-color);
   border-radius: 50%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: -1;
-
 }
 .super-heading:hover {
   color: #fff;
-  transition: .1s .1s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .super-heading::after {
@@ -99,18 +98,19 @@ ul {
 
 .super-heading::before {
   left: -40px;
-
 }
 
-.super-heading:hover::before  {
-  animation: ball-left 0.3s linear forwards;
+.super-heading:hover::before {
+  animation: ball-left 0.5s linear forwards;
 }
-.super-heading:hover::after  {
-animation: ball-right 0.3s linear forwards;
+.super-heading:hover::after {
+  animation: ball-right 0.5s linear forwards;
 }
-@keyframes ball-left{
-  50%{
+@keyframes ball-left {
+  50% {
     left: 0px;
+    width: 16px;
+    height: 16px;
   }
   100% {
     left: 0;
@@ -119,9 +119,11 @@ animation: ball-right 0.3s linear forwards;
     border-radius: 0;
   }
 }
-@keyframes ball-right{
-  50%{
+@keyframes ball-right {
+  50% {
     right: 0px;
+    width: 16px;
+    height: 16px;
   }
   100% {
     right: 0;
@@ -172,13 +174,13 @@ header {
       flex-grow: 1;
       height: 100%;
 
-      >ul {
+      > ul {
         display: flex;
         justify-content: flex-end;
         height: 100%;
 
-        >li {
-          >a {
+        > li {
+          > a {
             padding: 10px;
             text-transform: capitalize;
             position: relative;
@@ -227,7 +229,7 @@ header {
             -ms-border-radius: 0px 0 10px 10px;
             -o-border-radius: 0px 0 10px 10px;
 
-            >div {
+            > div {
               flex-basis: 50%;
             }
 
@@ -243,7 +245,7 @@ header {
               display: flex;
               gap: 5%;
 
-              >ul {
+              > ul {
                 flex-basis: 50%;
                 text-align: center;
 
@@ -262,7 +264,7 @@ header {
                 display: none;
               }
 
-              >div {
+              > div {
                 flex-basis: 100%;
               }
 
@@ -303,7 +305,7 @@ header {
     /* justify-content: center; */
     align-items: center;
 
-    >* {
+    > * {
       flex-basis: 50%;
     }
 
@@ -315,8 +317,7 @@ header {
       animation-timing-function: linear;
     }
 
-    >.text {
-
+    > .text {
       /* margin: 100px 0px; */
       & :is(p, h1) {
         font-size: 1.5rem;
@@ -333,7 +334,7 @@ header {
     }
 
     @media (max-width: 768px) {
-      &>* {
+      & > * {
         flex-basis: 100%;
         text-align: center;
       }
@@ -433,23 +434,23 @@ header {
 
 /* phooooooooone*/
 .features,
-.gallery, 
+.gallery,
 .articles {
   padding: var(--main-padding-top) 0;
 }
+.testimonials .cards,
 .features .cards,
 .gallery .cards,
 .articles .cards {
   display: grid;
   gap: 40px;
-  grid-template-columns: repeat(auto-fill, minmax(300px , 1fr));
-
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
-.articles .cards .card  {
+.articles .cards .card {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 2px 10px 2px #ddd;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .articles .card:hover {
   transform: translateY(-10px);
@@ -464,7 +465,6 @@ header {
 .articles .cards .text h3 {
   text-transform: capitalize;
   color: var(--main-color);
-
 }
 .articles .cards .text p {
   line-height: 1.8;
@@ -474,156 +474,200 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  border-top: 1px solid var(--main-color)
+  border-top: 1px solid var(--main-color);
 }
 .articles .more a {
   color: var(--main-color);
   font-weight: bold;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-transform: capitalize;
 }
 .articles .card:hover .more i {
-  animation: moveing .5s linear infinite
+  animation: moveing 0.5s linear infinite;
 }
 @keyframes moveing {
   50% {
-    transform: translateX(5px)
+    transform: translateX(5px);
   }
-  100%{
-    transform: translate(0px)
+  100% {
+    transform: translate(0px);
   }
-  }
-  .gallery {
-    background-color: var(--section-background);
-    
-  }
-  .gallery .cards .card {
-        border: 10px solid #fff;
-        position: relative;
-        overflow: hidden;
-  }
-  .gallery .cards .card::before {
-    content: "";
-    width:0% ;
-    height: 0%;
-    position: absolute;
-    background-color: #FFFFFF47;
-    transition: .2s ease-in-out;
-    top: 50%;
-    left: 50%;
-    z-index: 5;
-    transform: translate(-50%,-50%)
-  }
-  .gallery .cards .card:hover img {
-    transform: scale(1.2) rotate(5deg);
-  }
-  .gallery .cards .card:hover::before {
-    width: 100%;
-    height: 100%;
-  }
-  .gallery img {
-    width: 100%;
-    height: 100%;
-    transition: .5s ease-in-out;
-  }
-  .features .box .cards {
-    text-align: center;
-  }
-  .features .card {
-    box-shadow:  0px 2px 10px #eee;
-  }
-  .features .card img {
-    width: 100%;
-    height: 100%;
-    
-  }
-  .features .card .img{
-    position: relative ;
-  }
-  .features .img::after {
-    content: "";
-    position: absolute;
-    background-color:#fff;
-    width: calc( 100% + 1px);
-    height: 100%;
-    z-index: 3;
-    bottom: -1px;
-    transition:.3s;
-    left: 0;
-    clip-path: polygon(100% 40% , 0% 100% , 100% 100%)
-  }
-  .features .card:hover .img::after {
-    clip-path: polygon(0% 40% , 0% 100% , 100% 100%)
-  }
-    .features .cards> :nth-child(1) {
-    --color: #4AFF007A;
-  }
-  .features .cards > :nth-child(2) {
-    --color:#0036FF7A;
-  }
+}
+.gallery {
+  background-color: var(--section-background);
+}
+.gallery .cards .card {
+  border: 10px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+.gallery .cards .card::before {
+  content: "";
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  background-color: #ffffff47;
+  transition: 0.2s ease-in-out;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+}
+.gallery .cards .card:hover img {
+  transform: scale(1.2) rotate(5deg);
+}
+.gallery .cards .card:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease-in-out;
+}
+.features .box .cards {
+  text-align: center;
+}
+.features .card {
+  box-shadow: 0px 2px 10px #eee;
+  border: 1px solid #ccc;
+}
+.features .card img {
+  width: 100%;
+  height: 100%;
+}
+.features .card .img {
+  position: relative;
+}
+.features .img::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: calc(100% + 1px);
+  height: 100%;
+  z-index: 3;
+  bottom: -1px;
+  transition: 0.3s;
+  left: 0;
+  clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+}
+.features .card:hover .img::after {
+  clip-path: polygon(0% 50%, 0% 100%, 100% 100%);
+}
+.features .cards > :nth-child(1) {
+  --color: #288d0094;
+}
+.features .cards > :nth-child(2) {
+  --color: #0036ff7a;
+}
 
-  .features .cards >:nth-child(3){
-    --color:#FF00007A;
-  }
-    .features .cards  .img::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color : var(--color);
-    z-index: 2;
-  }
-  .features .card h3 {
-    color : var(--color);
-    padding: 20px 0 30px;
-    position: relative;
-    width: fit-content;
-    margin: 20px auto 40px;
-    font-size: 30px;
-    text-transform: capitalize;
-  }
-  .features .cards h3::after {
-    content: "";
-    height: 3px;
-    width: 80%;
-    background-color: var(--color);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    z-index: 999;
-  }
-  .features .card p {
-    line-height: 1.8;
-    color: #333;
-    margin-bottom: 40px;
-  }
-  .features .card button {
-    background-color: transparent;
-    padding: 10px 20px ;
-    border: solid 1px;
-    margin-bottom: 30px;
-    position: relative;
+.features .cards > :nth-child(3) {
+  --color: #a102027a;
+}
+.features .cards .img::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--color);
+  z-index: 2;
+}
+.features .card h3 {
+  padding: 20px 0 30px;
+  position: relative;
+  width: fit-content;
+  margin: 20px auto 40px;
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+.features .cards h3::after {
+  content: "";
+  height: 3px;
+  width: 80%;
+  background-color: var(--color);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  z-index: 999;
+}
+.features .card p {
+  line-height: 2;
+  font-size: 20px;
+  margin: 30px 0;
+  padding: 25px;
+  color: #777;
+}
+.features .card button {
+  background-color: transparent;
+  padding: 10px 20px;
+  border: solid 1px;
+  margin-bottom: 30px;
+  position: relative;
   overflow: hidden;
   text-transform: capitalize;
   font-weight: bold;
-  }
-  .features .card button::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: var(--color);
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    transition: .3s;
-  }
-  .features .card:hover  button::before {
-    left: 0;
-  }
-    .features .card:hover  button {
-      color: #fff;
-      border-color: #fff;
-      transition: .3s .1s;
-    }
+}
+.features .card button::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--color);
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: 0.3s;
+}
+.features .card:hover button::before {
+  left: 0;
+}
+.features .card:hover button {
+  color: #fff;
+  border-color: #fff;
+  transition: 0.3s 0.1s;
+}
+
+.testimonials {
+  padding: var(--main-padding-top) 0;
+  background-color: var(--section-background);
+}
+.testimonials .cards {
+}
+.testimonials .card {
+  position: relative;
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.testimonials .card img {
+  width: 100px;
+  height: 100px;
+  border: 10px solid var(--section-background);
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  right: -10px;
+}
+.testimonials .card h3 {
+  text-transform: capitalize;
+  margin: 10px 0;
+  font-size: 1.8rem;
+
+}
+
+.testimonials .card span {
+  color: #777;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.testimonials .star i.active{
+  color: gold;
+}
+.testimonials .card p {
+  line-height: 1.5;
+  color: #777;
+  margin-top: 10px;
+}
