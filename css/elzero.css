@@ -438,6 +438,7 @@ header {
 .articles {
   padding: var(--main-padding-top) 0;
 }
+.team-members .cards,
 .testimonials .cards,
 .features .cards,
 .gallery .cards,
@@ -633,8 +634,7 @@ header {
   padding: var(--main-padding-top) 0;
   background-color: var(--section-background);
 }
-.testimonials .cards {
-}
+
 .testimonials .card {
   position: relative;
   background-color: #fff;
@@ -655,7 +655,6 @@ header {
   text-transform: capitalize;
   margin: 10px 0;
   font-size: 1.8rem;
-
 }
 
 .testimonials .card span {
@@ -663,11 +662,88 @@ header {
   margin-bottom: 10px;
   display: inline-block;
 }
-.testimonials .star i.active{
+.testimonials .star i.active {
   color: gold;
 }
 .testimonials .card p {
   line-height: 1.5;
   color: #777;
   margin-top: 10px;
+}
+.team-members {
+  padding: var(--main-padding-top) 0;
+}
+.team-members .card {
+  position: relative;
+  padding: 25px 0;
+}
+.team-members .card::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 60px);
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  z-index: -3;
+}
+.team-members .card::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #ddd;
+  border-radius: 20px;
+  z-index: -2;
+  transition: 0.3s ease-in-out;
+}
+.team-members .card:hover::before {
+  width: calc(100% - 60px);
+}
+.team-members .top {
+  display: flex;
+  padding-top: 20px;
+}
+.team-members .top .photo {
+  flex-grow: 1;
+}
+.team-members .top img {
+  max-width: 100%;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+.team-members .card:hover img {
+  filter: grayscale(1);
+}
+.team-members .top .social {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.team-members .top .social i {
+  color: #777;
+  padding: 10px 20px;
+}
+.team-members .top .social i:hover {
+  color: var(--main-color);
+}
+.team-members .text {
+  padding-left: 75px;
+}
+.team-members .text h2 {
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+.team-members .text p {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  color: #777;
+  text-wrap: balance;
 }
