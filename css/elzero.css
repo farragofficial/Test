@@ -529,6 +529,9 @@ header {
   .features .box .cards {
     text-align: center;
   }
+  .features .card {
+    box-shadow:  0px 2px 10px #eee;
+  }
   .features .card img {
     width: 100%;
     height: 100%;
@@ -536,6 +539,21 @@ header {
   }
   .features .card .img{
     position: relative ;
+  }
+  .features .img::after {
+    content: "";
+    position: absolute;
+    background-color:#fff;
+    width: calc( 100% + 1px);
+    height: 100%;
+    z-index: 3;
+    bottom: -1px;
+    transition:.3s;
+    left: 0;
+    clip-path: polygon(100% 40% , 0% 100% , 100% 100%)
+  }
+  .features .card:hover .img::after {
+    clip-path: polygon(0% 40% , 0% 100% , 100% 100%)
   }
     .features .cards> :nth-child(1) {
     --color: #4AFF007A;
@@ -555,3 +573,57 @@ header {
     background-color : var(--color);
     z-index: 2;
   }
+  .features .card h3 {
+    color : var(--color);
+    padding: 20px 0 30px;
+    position: relative;
+    width: fit-content;
+    margin: 20px auto 40px;
+    font-size: 30px;
+    text-transform: capitalize;
+  }
+  .features .cards h3::after {
+    content: "";
+    height: 3px;
+    width: 80%;
+    background-color: var(--color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    z-index: 999;
+  }
+  .features .card p {
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  .features .card button {
+    background-color: transparent;
+    padding: 10px 20px ;
+    border: solid 1px;
+    margin-bottom: 30px;
+    position: relative;
+  overflow: hidden;
+  text-transform: capitalize;
+  font-weight: bold;
+  }
+  .features .card button::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--color);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: .3s;
+  }
+  .features .card:hover  button::before {
+    left: 0;
+  }
+    .features .card:hover  button {
+      color: #fff;
+      border-color: #fff;
+      transition: .3s .1s;
+    }
