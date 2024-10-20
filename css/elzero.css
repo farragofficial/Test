@@ -433,6 +433,7 @@ header {
 }
 
 /* phooooooooone*/
+.works,
 .testimonials,
 .skills,
 .services,
@@ -440,6 +441,12 @@ header {
 .gallery,
 .articles {
   padding: var(--main-padding-top) 0;
+}
+.works,
+.testimonials,
+.services,
+.gallery {
+  background-color: var(--section-background);
 }
 .services .cards,
 .team-members .cards,
@@ -498,11 +505,7 @@ header {
     transform: translate(0px);
   }
 }
-.testimonials,
-.services,
-.gallery {
-  background-color: var(--section-background);
-}
+
 .gallery .cards .card {
   border: 10px solid #fff;
   position: relative;
@@ -636,7 +639,6 @@ header {
   transition: 0.3s 0.1s;
 }
 
-
 .testimonials .card {
   position: relative;
   background-color: #fff;
@@ -755,7 +757,7 @@ header {
   background-color: #fff;
   text-align: center;
   position: relative;
-  box-shadow:  0px 10px 15px -3px #e0e0e0;
+  box-shadow: 0px 10px 15px -3px #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -822,4 +824,123 @@ header {
   font-size: 1rem;
   text-transform: capitalize;
   color: var(--main-color);
+}
+.works .cards,
+.skills .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  & > * {
+    flex-basis: 50%;
+  }
+}
+.works .cards img,
+.skills .cards img {
+  width: 100%;
+}
+.skills .skills-content h3 {
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+.skills .skills-content .par {
+  background-color: #ddd;
+  height: 30px;
+}
+.skills .skills-content .par span {
+  background-color: var(--main-color);
+  position: relative;
+  display: inline-block;
+}
+.skills .skills-content .par span::before {
+  content: attr(data-number);
+  background-color: #000;
+  position: absolute;
+  width: 40px;
+  font-size: 0.7rem;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  right: -20px;
+  top: -20px;
+  text-align: center;
+}
+
+.skills .skills-content .par span::after {
+  content: "";
+  border: 4px solid;
+  border-color: #000 transparent transparent;
+  position: absolute;
+  right: -2px;
+  top: -4px;
+}
+
+.works .work-content .card {
+  display: flex;
+  align-items: center;
+  background-color: #f6f5f5;
+  padding: 20px;
+  border: 4px solid white;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.works .work-content .card:hover::before {
+width: 100%;
+height: 100%;
+}
+.works .work-content .card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  width: 0;
+  height: 0;
+  background-color: #dfdfdf;
+  transition: var(--main-transition);
+}
+.works .work-content .card img {
+  width: 70px;
+  margin-right: 20px;
+  position: relative;
+}
+.works .work-content .card .text {
+  position: relative;
+}
+
+.works .work-content .card .text h3 {
+  margin-bottom: 10px;
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+.works .work-content .card .text p {
+  color: #777;
+  line-height: 1.7;
+  margin: 10px 0 0;
+  font-size: 18px;
+}
+@media (max-width: 991px) {
+  .works .cards > img,
+  .skills .cards img {
+    display: none;
+  }
+  .works .work-content,
+  .skills .skills-content {
+    flex-basis: 80%;
+  }
+  
+}
+@media (max-width:767px) {
+  .work-content .card {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+  }
 }
