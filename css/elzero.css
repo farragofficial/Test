@@ -433,11 +433,15 @@ header {
 }
 
 /* phooooooooone*/
+.testimonials,
+.skills,
+.services,
 .features,
 .gallery,
 .articles {
   padding: var(--main-padding-top) 0;
 }
+.services .cards,
 .team-members .cards,
 .testimonials .cards,
 .features .cards,
@@ -494,6 +498,8 @@ header {
     transform: translate(0px);
   }
 }
+.testimonials,
+.services,
 .gallery {
   background-color: var(--section-background);
 }
@@ -630,10 +636,6 @@ header {
   transition: 0.3s 0.1s;
 }
 
-.testimonials {
-  padding: var(--main-padding-top) 0;
-  background-color: var(--section-background);
-}
 
 .testimonials .card {
   position: relative;
@@ -746,4 +748,78 @@ header {
   line-height: 1.5;
   color: #777;
   text-wrap: balance;
+}
+
+.services .card {
+  counter-increment: services;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  box-shadow:  0px 10px 15px -3px #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.services .card::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: var(--main-transition);
+}
+.services .card:hover::before {
+  width: 100%;
+}
+.services .card i {
+  color: #ddd;
+  padding-top: 40px;
+}
+.services .card h3 {
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+}
+.services .card .footer {
+  display: flex;
+  justify-content: end;
+  background-color: #f3f2f2;
+  padding: 15px;
+  position: relative;
+}
+.services .card .footer::before {
+  content: counter(services);
+  background-color: #2196f3;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  padding-left: 20px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+}
+
+.services .card .footer::after {
+  content: "";
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 80px;
+  background-color: #777;
+  transform: skew(-30deg);
+}
+
+.services .card .footer span {
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: var(--main-color);
 }
