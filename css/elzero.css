@@ -433,6 +433,7 @@ header {
 }
 
 /* phooooooooone*/
+.events,
 .works,
 .testimonials,
 .skills,
@@ -825,6 +826,7 @@ header {
   text-transform: capitalize;
   color: var(--main-color);
 }
+.events .cards,
 .works .cards,
 .skills .cards {
   display: flex;
@@ -835,9 +837,10 @@ header {
     flex-basis: 50%;
   }
 }
+.events .cards img,
 .works .cards img,
 .skills .cards img {
-  width: 100%;
+  max-width: 50%;
 }
 .skills .skills-content h3 {
   color: var(--main-color);
@@ -925,14 +928,83 @@ height: 100%;
   margin: 10px 0 0;
   font-size: 18px;
 }
+.events .events-content ul{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.events .events-content ul li{
+  flex-grow: 1;
+  text-align: center;
+  border: 1px solid ;
+  border-radius: 10px;
+
+}
+.events .events-content ul li > :first-child {
+  border-bottom: solid 1px #000 ;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--main-color);
+}
+.events .events-content ul li span{
+  padding: 10px 0;
+  display: block;
+}
+.events .events-content .text h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--main-color) ;
+  text-transform: capitalize;
+}
+.events .events-content .text p {
+  color: #777;
+  line-height: 1.7;
+  margin: 10px 0 0;
+  font-size: 18px;
+}
+.events form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  background-color: #ddd;
+  padding: 30px;
+  gap: 10px;
+  margin:  30px auto;
+  border-radius: 50px;
+}
+.events form :first-child {
+
+background-color: inherit;
+&::placeholder {
+  text-transform: capitalize;
+}
+&:focus {
+  outline: none;
+}
+} 
+.events form :last-child {
+
+background-color: var(--main-color);
+color: white;
+
+}
+.events form input {
+  font-size: 1.3rem;
+  padding: 20px;
+  border-radius: 50px;
+  border: none;
+  text-transform: capitalize;
+}
 @media (max-width: 991px) {
+  .events .cards > img ,
   .works .cards > img,
   .skills .cards img {
     display: none;
   }
+  .events .events-content,
   .works .work-content,
   .skills .skills-content {
-    flex-basis: 80%;
+    flex-basis: 90%;
   }
   
 }
@@ -942,5 +1014,14 @@ height: 100%;
     justify-content: center;
     text-align: center;
     gap: 30px;
+  }
+  .events form {
+    flex-direction: column;
+    &>* {
+      width: 100%;
+    }
+  }
+  .events .events-content .text {
+    text-align: center;
   }
 }
