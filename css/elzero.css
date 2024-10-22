@@ -72,6 +72,7 @@ ul {
   z-index: 2;
   text-transform: capitalize;
   font-size: 2rem;
+  user-select: none;
   font-weight: bold;
 }
 
@@ -144,6 +145,7 @@ header {
     .logo {
       text-decoration: underline;
       font-size: 2rem;
+      user-select: none;
       transition: var(--main-transition);
       -webkit-transition: var(--main-transition);
       -moz-transition: var(--main-transition);
@@ -433,6 +435,7 @@ header {
 }
 
 /* phooooooooone*/
+.plans,
 .events,
 .works,
 .testimonials,
@@ -443,6 +446,7 @@ header {
 .articles {
   padding: var(--main-padding-top) 0;
 }
+.plans,
 .works,
 .testimonials,
 .services,
@@ -826,6 +830,7 @@ header {
   text-transform: capitalize;
   color: var(--main-color);
 }
+.plans .cards,
 .events .cards,
 .works .cards,
 .skills .cards {
@@ -1024,4 +1029,43 @@ color: white;
   .events .events-content .text {
     text-align: center;
   }
+}
+.plans .card {
+  text-align: center;
+  background-color: #fff;
+}
+.plans .card h3 {
+  text-transform: capitalize;
+}
+.plans .card i {
+  font-size: 4rem;
+}
+.plans .card h2 {
+  font-size: 4rem;
+  color: var(--main-color);
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.plans .card span {
+  text-transform: capitalize;
+}
+.plans .card ul {
+  margin-block: 20px;
+}
+.plans .card ul li {
+  padding: 20px 40px;
+  text-align: start;
+  border-top: 1px solid #A0A0A0;
+  position: relative;
+}
+.plans li::before {
+  content: "✔️";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%)
+  
+}
+.plans .card button {
+  
 }
